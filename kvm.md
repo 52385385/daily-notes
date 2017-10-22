@@ -1,5 +1,8 @@
 # Installation
-1. Download centos minimal: #wget http://mirrors.aliyun.com/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso
+1. Download centos minimal: 
+```sh
+wget http://mirrors.aliyun.com/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso
+```
 2. Check vm support
 ```shell
 egrep '(vmx|svm)' /proc/cpuinfo
@@ -82,14 +85,14 @@ date -R # check current timezone offset, e.g. +08:00
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
-### Common commands£¨ÒÔsrv_1ÎªÀı£©
-1. virsh list --all #ÁĞ³öËùÓĞĞéÄâ»ú
-2. virsh setmaxmem srv_1 8192M #ÉèÖÃĞéÄâ»ú×î´óÄÚ´æ8G
-6. virsh setmem srv_1 8192M #ÉèÖÃĞéÄâ»ú¿ÉÊ¹ÓÃµÄÄÚ´æ8G
-3. virsh start srv_1 #Æô¶¯ĞéÄâ»ú
-4. virsh shutdown srv_1 #¹Ø±ÕĞéÄâ»ú
-5. virsh edit srv_1 #±à¼­ĞéÄâ»úµÄxml£¬¿ÉÖ±½Ó±à¼­²ÎÊı
-7. virsh dominfo srv_1 #ĞéÄâ»úĞÅÏ¢
+### Common commandsï¼ˆä»¥srv_1ä¸ºä¾‹ï¼‰
+1. virsh list --all #åˆ—å‡ºæ‰€æœ‰è™šæ‹Ÿæœº
+2. virsh setmaxmem srv_1 8192M #è®¾ç½®è™šæ‹Ÿæœºæœ€å¤§å†…å­˜8G
+6. virsh setmem srv_1 8192M #è®¾ç½®è™šæ‹Ÿæœºå¯ä½¿ç”¨çš„å†…å­˜8G
+3. virsh start srv_1 #å¯åŠ¨è™šæ‹Ÿæœº
+4. virsh shutdown srv_1 #å…³é—­è™šæ‹Ÿæœº
+5. virsh edit srv_1 #ç¼–è¾‘è™šæ‹Ÿæœºçš„xmlï¼Œå¯ç›´æ¥ç¼–è¾‘å‚æ•°
+7. virsh dominfo srv_1 #è™šæ‹Ÿæœºä¿¡æ¯
 8. # Attach a cdrom to kvm. Find dev def in xml with cdrom segment, something like dev='hda'
 ```sh
 virsh attach-disk domain iso device
@@ -104,9 +107,9 @@ virsh snapshot-revert domain snapshot #revert domain to the reffered snapshot nu
 virsh snapshot-delete domain snapshot #delete domain snapshot
 ```
 
-10. virsh undefine domain #É¾³ıĞéÄâ»ú
+10. virsh undefine domain #åˆ é™¤è™šæ‹Ÿæœº
 
-11. qemu-img resize vm.img +10G #Ôö¼Ó10G¸ø¾µÏñÀ©³ä£¬ÏàÓ¦µÄÓĞ-10G¼õÉÙ10G£¬Õë¶Ôraw»òqcow2¸ñÊ½
+11. qemu-img resize vm.img +10G #å¢åŠ 10Gç»™é•œåƒæ‰©å……ï¼Œç›¸åº”çš„æœ‰-10Gå‡å°‘10Gï¼Œé’ˆå¯¹rawæˆ–qcow2æ ¼å¼
 
 12. #Change disk format
 * qemu-img convert -f raw -O qcow2 windows7_ultimate_x86 windows7_ultimate_x86.qcow2 #change from raw into qcow2 so that we can use snapshot utils
