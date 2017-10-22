@@ -93,12 +93,12 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 4. virsh shutdown srv_1 #关闭虚拟机
 5. virsh edit srv_1 #编辑虚拟机的xml，可直接编辑参数
 7. virsh dominfo srv_1 #虚拟机信息
-8. # Attach a cdrom to kvm. Find dev def in xml with cdrom segment, something like dev='hda'
+8. Attach a cdrom to kvm. Find dev def in xml with cdrom segment, something like dev='hda'
 ```sh
 virsh attach-disk domain iso device
 virsh attach-disk srv_1 /home/centos.iso hda --type cdrom --mode readonly
 ```
-9. #Snapshot management
+9. Snapshot management
 ```sh
 virsh snapshot-create domain #create new snapshot for this domain
 virsh snapshot-list domain #list all snapshots of this domain
@@ -111,6 +111,6 @@ virsh snapshot-delete domain snapshot #delete domain snapshot
 
 11. qemu-img resize vm.img +10G #增加10G给镜像扩充，相应的有-10G减少10G，针对raw或qcow2格式
 
-12. #Change disk format
+12. Change disk format
 * qemu-img convert -f raw -O qcow2 windows7_ultimate_x86 windows7_ultimate_x86.qcow2 #change from raw into qcow2 so that we can use snapshot utils
 * [something about format changing](https://unixblogger.com/2016/06/13/convert-img-raw-to-qcow2/)
