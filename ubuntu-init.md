@@ -68,7 +68,7 @@
 > on other machine, change /etc/default/docker, add: DOCKER_OPTS="--insecure-registry registryIPGoes:5000"
 ### Containerized apps
 1. mysql
-> docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=nomes_8129@yimym -p 3306:3306 -v /root/yimym/mysql/conf:/etc/mysql/conf.d -v /root/yimym/mysql/data:/var/lib/mysql mysql
+> docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -v /root/yimym/mysql/conf:/etc/mysql/conf.d -v /root/yimym/mysql/data:/var/lib/mysql mysql
 2. mongo
 > docker run -d --name mongo -p 27017:27017 -v /my-data-dir:/data/db mongo --auth
 3. redis
