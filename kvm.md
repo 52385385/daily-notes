@@ -85,7 +85,7 @@ date -R # check current timezone offset, e.g. +08:00
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
-### Common commands（以srv_1为例）
+# Common commands（以srv_1为例）
 1. virsh list --all #列出所有虚拟机
 2. virsh setmaxmem srv_1 8192M #设置虚拟机最大内存8G
 6. virsh setmem srv_1 8192M #设置虚拟机可使用的内存8G
