@@ -13,6 +13,15 @@
 5. run fcitx and add sougou input method
 6. log off and login
 
+## Google Cloud Pinyin
+1. install fcitx and google pinyin
+```sh
+sudo apt-get install fcitx fcitx-googlepinyin im-config
+```
+2. logout or restart(suggested)
+3. right click the keyboard icon on the top-right corner, if not exists, just try to press "shift" key
+4. in "Configure current input method" -> "Addon" tab, double click "Cloud Pinyin" and choose "Cloud Pinyin Source", "Baidu" is suggested if in China land.
+
 ## java and maven
 1. download jdk from oracle(tar.gz format)
 2. tar -vxf jdk.tar.gz
