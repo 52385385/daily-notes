@@ -14,13 +14,15 @@
 6. log off and login
 
 ## Google Cloud Pinyin
-1. install fcitx and google pinyin
+1. install fcitx, google pinyin, input method config console and cloud module
 ```sh
 sudo apt-get install fcitx fcitx-googlepinyin im-config
+sudo apt-get install fcitx-module-cloudpinyin #cloud module
 ```
-2. logout or restart(suggested)
-3. right click the keyboard icon on the top-right corner, if not exists, just try to press "shift" key
-4. in "Configure current input method" -> "Addon" tab, double click "Cloud Pinyin" and choose "Cloud Pinyin Source", "Baidu" is suggested if in China land.
+2. type im-config to open console, select fcitx as input method architechure.
+3. logout or restart(suggested)
+4. right click the keyboard icon on the top-right corner, if not exists, just try to press "shift" key
+5. in "Configure current input method" -> "Addon" tab, double click "Cloud Pinyin" and choose "Cloud Pinyin Source", "Baidu" is suggested if in China land.
 
 ## java and maven
 1. download jdk from oracle(tar.gz format)
