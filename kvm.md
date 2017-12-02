@@ -69,17 +69,27 @@ systemctl restart network.service
 ```shell
 yum install net-tools
 yum install openssh-server
+yum install wget
 ```
-4. Configure ssh server to avoid being kick out
+
+4. Configure alibaba yum repos (optional, only if you are in China land)
+```shell
+cd /etc/yum.repos.d
+mv CentOS-Base.repo CentOS-Base.repo.bak
+wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+wget -O epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+```
+
+5. Configure ssh server to avoid being kick out, file /etc/ssh/sshd_config
 ```shell
 ClientAliveInterval 60 # uncomment and change to 60, which means to send alive signal per minute
 ClientAliveCountMax 3 # uncomment
 ```
-5. Customize host name
+6. Customize host name
 ```shell
 hostname newhost # rename to newhost
 ```
-6. Configure timezone [Reference](http://blog.csdn.net/kimsoft/article/details/8091734)
+7. Configure timezone [Reference](http://blog.csdn.net/kimsoft/article/details/8091734)
 ```shell
 date -R # check current timezone offset, e.g. +08:00
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
